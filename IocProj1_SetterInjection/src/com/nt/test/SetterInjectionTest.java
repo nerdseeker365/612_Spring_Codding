@@ -1,6 +1,4 @@
 package com.nt.test;
-import java.util.Date;
-
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.FileSystemResource;
@@ -19,7 +17,7 @@ public class SetterInjectionTest {
 		//get Bean
 		Object obj=factory.getBean("wmg");
 		wish=(WishMessageGenerator) factory.getBean("wmg");
-		System.out.println("---->Result::"+wish.generateWishMessage("sankar"));
+		System.out.println("---->Result::"+wish.generateWishMessage("Raju"));
 	}
 
 }

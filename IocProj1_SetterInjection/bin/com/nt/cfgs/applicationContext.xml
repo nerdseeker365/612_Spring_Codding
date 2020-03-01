@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
-<bean id="dt" class="java.util.Date"></bean>
-<bean id="wmg" class="com.nt.beans.WishMessageGenerator">
+<!-- <bean id="dt" class="java.util.Date"></bean> -->
+<bean name="dt" class="java.util.Date"></bean>
+<!-- <bean id="wmg" class="com.nt.beans.WishMessageGenerator"> -->
+<bean name="wmg" class="com.nt.beans.WishMessageGenerator">
 <property name="date" ref="dt"></property>
 </bean>
 </beans>
