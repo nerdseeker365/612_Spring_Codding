@@ -5,7 +5,7 @@
 <!-- <bean id="dt" class="java.util.Date"></bean> -->
 <bean name="dt" class="java.util.Date"></bean>
 <!-- <bean id="wmg" class="com.nt.beans.WishMessageGenerator"> -->
-<bean name="wmg" class="com.nt.beans.WishMessageGenerator">
+<bean name="wmg,wmg1" class="com.nt.beans.WishMessageGenerator">
 <property name="date" ref="dt"></property>
 </bean>
 </beans>
