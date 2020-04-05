@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Date class one Configuration -->
+<bean id="dob" class="java.util.Date">
+<property name="year" value="25"></property>
+<property name="month" value="01"></property>
+<property name="date" value="09"></property>
+</bean>
+
+<!-- Date class second Configuration -->
+<bean id="doj" class="java.util.Date">
+<property name="year" value="24"></property>
+<property name="month" value="02"></property>
+<property name="date" value="10"></property>
+</bean>
+
+<!-- Date class third Configuration -->
+<bean id="dom" class="java.util.Date">
+<property name="year" value="23"></property>
+<property name="month" value="03"></property>
+<property name="date" value="11"></property>
+</bean>
+
+<!-- Spring Bean Configuration,for person -->
+<bean id="raja" class="com.nt.beans.PersonProfile">
+<constructor-arg name="aadharNo" value="994949330"></constructor-arg>
+<constructor-arg name="name" value="Sankar"></constructor-arg>
+<constructor-arg name="age" value="25"></constructor-arg>
+<constructor-arg name="dob" ref="dob"></constructor-arg>
+<constructor-arg name="doj" ref="doj"></constructor-arg>
+
+<constructor-arg ><null></null></constructor-arg>
+
+</bean>
+<!-- Spring Bean Configuration,for person1 -->
+<bean id="rani" class="com.nt.beans.PersonProfile">
+<constructor-arg name="aadharNo" value="994949330"></constructor-arg>
+<constructor-arg name="name" value="Sankar"></constructor-arg>
+<constructor-arg name="age" value="25"></constructor-arg>
+<constructor-arg name="dob" ref="dob"></constructor-arg>
+<constructor-arg name="doj" ref="doj"></constructor-arg>
+<constructor-arg name="dom" ref="dom"></constructor-arg>
+</bean>
+<!-- Spring Bean Configuration,for person2 -->
+<bean id="suresh" class="com.nt.beans.PersonProfile">
+<constructor-arg name="aadharNo" value="994949330"></constructor-arg>
+<constructor-arg name="name" value="Sankar"></constructor-arg>
+<constructor-arg name="age" value="25"></constructor-arg>
+
+<constructor-arg ><null></null></constructor-arg>
+<constructor-arg ><null></null></constructor-arg>
+<constructor-arg ><null></null></constructor-arg>
+
+</bean>
+</beans>
