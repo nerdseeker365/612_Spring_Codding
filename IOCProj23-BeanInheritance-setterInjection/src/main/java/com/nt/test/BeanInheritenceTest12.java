@@ -5,7 +5,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 
 import com.nt.beans.Car;
 
-public class BeanInheritenceTest12 {
+public class BeanInheritenceTest12 { 
 
 	public static void main(String[] args) {
 		DefaultListableBeanFactory factory = null;
