@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Base Bean cfg as abstract bean cfg here common variables taken-->
+<bean id="baseCar" class="com.nt.beans.Car" abstract="true">
+<property name="color" value="red"></property>
+<property name="type" value="swift"></property>
+<property name="engineCC" value="12000cc"></property>
+<property name="fuelType" value="petrol"></property>
+<property name="makeCompany" value="MaruthiSuzuki"></property>
+<property name="modelName" value="swiftDezire"></property>
+<property name="variant" value="ZDI"></property>
+</bean>
+
+<!-- Child1 Bean cfgs ,here specific variable only-->
+<bean id="rajaCar" class="com.nt.beans.Car" parent="baseCar">
+<property name="regNo" value="08778uhj"></property>
+<property name="ownerName" value="sankar"></property>
+<!-- overriding above varient variable  -->
+<property name="variant" value="kk"></property>
+</bean>
+<!--Child2 Bean cfgs , Here specific values only  -->
+<bean id="raniCar" class="com.nt.beans.Car">
+<property name="regNo" value="08llll99"></property>
+<property name="ownerName" value="rani"></property>
+<!-- overriding above color varaible -->
+<property name="color" value="pink"></property>
+</bean>
+</beans>
