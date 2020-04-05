@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- Ignore red color errors in BeanInheritance ,not problem red color marks -->
+<!-- Base Bean cfg as abstract bean cfg here common variables taken-->
+<bean id="baseCar" class="com.nt.beans.Car" abstract="true">
+<constructor-arg name="color" value="red"></constructor-arg>
+<constructor-arg name="type" value="swift"></constructor-arg>
+<constructor-arg name="engineCC" value="12000cc"></constructor-arg>
+<constructor-arg name="fuelType" value="petrol"></constructor-arg>
+<constructor-arg name="makeCompany" value="MaruthiSuzuki"></constructor-arg>
+<constructor-arg name="modelName" value="swiftDezire"></constructor-arg>
+<constructor-arg name="variant" value="ZDI"></constructor-arg>
+</bean>
+
+<!-- Child1 Bean cfgs ,here specific variable only-->
+<bean id="rajaCar" class="com.nt.beans.Car" parent="baseCar">
+<constructor-arg name="regNo" value="08778uhj"></constructor-arg>
+<constructor-arg name="ownerName" value="sankar"></constructor-arg>
+<constructor-arg name="variant" value="kk"></constructor-arg>
+</bean>
+<!--Child2 Bean cfgs , Here specific values only  -->
+<bean id="raniCar" class="com.nt.beans.Car" parent="baseCar">
+<constructor-arg name="regNo" value="08llll99"></constructor-arg>
+<constructor-arg name="ownerName" value="rani"></constructor-arg>
+<constructor-arg name="color" value="pink"></constructor-arg>
+</bean>
+</beans>
