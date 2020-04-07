@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Parent Class Configuration-->
+<bean id="course" class="com.nt.beans.EnggCourse" abstract="true">
+<property name="subjects">
+<set>
+<value>Drawing </value>
+<value>m1</value>
+<value>Physics</value>
+<value>Chemistry</value>
+</set>
+</property>
+</bean>
+
+<!-- Child Class Configuration -->
+<bean id="ece" class="com.nt.beans.EnggCourse" parent="course">
+<property name="subjects">
+<set merge="default">
+<value>C_Language</value>
+<value>reg</value>
+</set>
+</property>
+</bean>
+
+
+<!-- Child Class Configuration -->
+<bean id="cse" class="com.nt.beans.EnggCourse" parent="course">
+<property name="subjects">
+<set merge="true">
+<value>C_Language</value>
+<value>OS</value>
+</set>
+</property>
+</bean>
+</beans>
