@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- DataSource Configuration -->
+
+<bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+         <constructor-arg name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></constructor-arg>
+         <constructor-arg name="username" value="scott"></constructor-arg>
+         <constructor-arg name="password" value="tiger"></constructor-arg>
+</bean>
+
+<!-- DAO class Configuration -->
+<bean id="dao" class="com.nt.dao.StudentDAOImpl">
+<constructor-arg name="ds" ref="drds"></constructor-arg>
+</bean>
+
+<!-- service class Configuration -->
+<bean id="service" class="com.nt.service.StudentOperationsServiceImpl">
+<constructor-arg name="dao" ref="dao"></constructor-arg>
+</bean>
+
+<!-- Controller Class Configuration -->
+<bean id="control" class="com.nt.controller.MainController">
+<constructor-arg name="service" ref="service"></constructor-arg>
+</bean>
+</beans>
